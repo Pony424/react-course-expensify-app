@@ -14,7 +14,9 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-export { firebase, database as default };
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { firebase, googleAuthProvider, database as default };
 
 // database.ref('expenses')
 //   .once('value')
@@ -33,17 +35,17 @@ export { firebase, database as default };
 
 //child_removed
 // database.ref('expenses').on('child_removed', (snapshot) => {
-//   console.log(snapshot.key, snaoshot.val());
+//   console.log(snapshot.key, snapshot.val());
 // });
 
 //child_changed
 // database.ref('expenses').on('child_changed', (snapshot) => {
-//   console.log(snapshot.key, snaoshot.val());
+//   console.log(snapshot.key, snaopshot.val());
 // })
 
 //child_added
 // database.ref('expenses').on('child_added', (snapshot) => {
-//   console.log(snapshot.key, snaoshot.val());
+//   console.log(snapshot.key, snapshot.val());
 // })
 
 // database.ref('expenses').on('value', (snapshot) => {
